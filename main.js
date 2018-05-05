@@ -8,6 +8,27 @@ class Roshambo {
     this.player = player
   }
 
+  static didPlayerWin(player, computer) {
+    /* eslint-disable */
+    switch (player) {
+      case 'rock':
+        if (computer === 'paper') {
+          return false
+        }
+        break;
+      case 'paper':
+        if (computer === 'scissor') {
+          return false
+        }
+        break;
+      default: // scissor
+        if (computer === 'rock') {
+          return false
+        }
+    }
+    /* eslint-enable */
+    return true
+  }
 }
 
 class ComputerMove {
