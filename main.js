@@ -7,6 +7,18 @@ class Roshambo {
     this.computer = computer.move()
     this.player = player
   }
+
+}
+
+class ComputerMove {
+  constructor() {
+    this.moves = ['rock', 'paper', 'scissor']
+  }
+
+  move() {
+    const index = Math.floor(Math.random() * this.moves.length)
+    return this.moves[index]
+  }
 }
 
 if (argv.move) {
