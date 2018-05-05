@@ -29,6 +29,22 @@ class Roshambo {
     /* eslint-enable */
     return true
   }
+
+  whoWins() {
+    console.log(`Player plays ${this.player}!`)
+    console.log(`Computer plays ${this.computer}!`)
+    if (this.player === this.computer) {
+      console.log(`~It's a draw.~`)
+    }
+    else {
+      if (Roshambo.didPlayerWin(this.player, this.computer)) {
+        console.log(`~Player wins.~`)
+      }
+      else {
+        console.log(`~Computer wins.~`)
+      }
+    }
+  }
 }
 
 class ComputerMove {
@@ -44,6 +60,7 @@ class ComputerMove {
 
 if (argv.move) {
   const game = new Roshambo(argv.move)
+  game.whoWins()
 }
 else {
   console.log('Pick a move!')
